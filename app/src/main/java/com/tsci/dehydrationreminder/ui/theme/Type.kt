@@ -1,4 +1,4 @@
-package com.example.android.dehydrationreminder.ui.theme
+package com.tsci.dehydrationreminder.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
