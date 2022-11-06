@@ -2,9 +2,9 @@
  * Created by Burak Taşcı on 6.11.2022.
  */
 object Versions {
-    const val compose = "1.3.0"
+    const val compose = "1.2.0"
     const val gradlePlugin = "4.2.1"
-    const val kotlin = "1.5.0"
+    const val kotlin = "1.7.0"
     const val timber = "4.7.1"
     const val appCompat = "1.3.0"
     const val material = "1.3.0"
