@@ -44,6 +44,12 @@ android {
     kapt {
         correctErrorTypes = true
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.compose
+    }
     packagingOptions {
         resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
@@ -55,6 +61,9 @@ kotlin {
 }
 
 dependencies {
+    implementation(project(":usecases"))
+    implementation(project(":ui"))
+    implementation(project(":core"))
 
     implementation(Dependencies.kotlin)
     implementation(Dependencies.composeActivity)

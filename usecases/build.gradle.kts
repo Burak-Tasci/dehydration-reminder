@@ -1,10 +1,11 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
 }
 
 android {
-    namespace = "com.tsci.core"
+    namespace = "com.tsci.usecases"
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
@@ -16,7 +17,7 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -25,22 +26,26 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+    kapt {
+        correctErrorTypes = true
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
 }
 
+
 dependencies {
+    implementation(project(":data"))
 
     implementation(Dependencies.kotlin)
     testImplementation(Dependencies.junit)
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-
-
-    api(Dependencies.lifecycleViewModel)
-    api(Dependencies.coroutinesCore)
 }
