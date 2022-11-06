@@ -1,4 +1,4 @@
-package com.example.android.dehydrationreminder
+package com.tsci.dehydrationreminder.ui
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.tsci.ui
+package com.tsci.dehydrationreminder.usecases
 
 import org.junit.Test
 

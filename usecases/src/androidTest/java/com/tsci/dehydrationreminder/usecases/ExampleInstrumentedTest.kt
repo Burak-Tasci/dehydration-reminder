@@ -1,4 +1,4 @@
-package com.dehydrationreminder.usecases
+package com.tsci.dehydrationreminder.usecases
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

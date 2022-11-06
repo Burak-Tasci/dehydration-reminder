@@ -1,4 +1,4 @@
-package com.tsci.core
+package com.tsci.dehydrationreminder.core
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.channels.Channel

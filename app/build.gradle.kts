@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.android.dehydrationreminder"
+    namespace = "com.tsci.dehydrationreminder"
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
