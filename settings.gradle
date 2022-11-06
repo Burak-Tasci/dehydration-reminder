@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Dehydration Reminder"
 include ':app'
+include ':data'
+include ':usecases'
+include ':ui'
+include ':core'
