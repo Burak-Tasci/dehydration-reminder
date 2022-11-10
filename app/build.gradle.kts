@@ -1,3 +1,8 @@
+import Dependencies.Compose
+import Dependencies.Hilt
+import Dependencies.Lifecycle
+import Dependencies.ComposeDestinations
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -5,6 +10,7 @@ plugins {
     id("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
+    id("com.google.devtools.ksp") version "1.7.20-1.0.7"
 }
 
 android {
@@ -63,25 +69,37 @@ kotlin {
 dependencies {
     implementation(project(":usecases"))
     implementation(project(":core"))
-
     implementation(Dependencies.kotlin)
-    implementation(Dependencies.composeActivity)
-    implementation(Dependencies.composeUi)
-    implementation(Dependencies.composeToolingPreview)
-    implementation(Dependencies.composeMaterial)
     testImplementation(Dependencies.junit)
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-    androidTestImplementation(Dependencies.composeUiTestJUnit)
-    debugImplementation(Dependencies.composeTooling)
-    debugImplementation(Dependencies.composeUiTestManifest)
+
+    implementation(Compose.composeActivity)
+    implementation(Compose.composeUi)
+    implementation(Compose.composeToolingPreview)
+    implementation(Compose.composeMaterial)
+    androidTestImplementation(Compose.composeUiTestJUnit)
+    debugImplementation(Compose.composeTooling)
+    debugImplementation(Compose.composeUiTestManifest)
+    api(Compose.composeMaterialIcons)
 
 
-    api(Dependencies.hiltAndroid)
-    api(Dependencies.hiltCompiler)
-    api(Dependencies.lifecycleViewModel)
-    api(Dependencies.lifecycleLiveData)
-    api(Dependencies.lifecycleRuntime)
-    compileOnly(Dependencies.hiltDagger)
-    kapt(Dependencies.hiltDaggerCompiler)
+    api(Hilt.android)
+    api(Hilt.compiler)
+    compileOnly(Hilt.dagger)
+    kapt(Hilt.daggerCompiler)
+    api(Hilt.navigationCompose)
+
+    api(Lifecycle.viewModel)
+    api(Lifecycle.runtime)
+    api(Lifecycle.viewModelCompose)
+
+    api(ComposeDestinations.core)
+    ksp(ComposeDestinations.ksp)
+
+
+
+//    implementation "com.google.accompanist:accompanist-swiperefresh:0.24.2-alpha"
+
+
 }
