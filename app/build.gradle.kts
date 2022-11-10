@@ -62,7 +62,6 @@ kotlin {
 
 dependencies {
     implementation(project(":usecases"))
-    implementation(project(":ui"))
     implementation(project(":core"))
 
     implementation(Dependencies.kotlin)
