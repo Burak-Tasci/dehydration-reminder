@@ -10,6 +10,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.tsci.dehydrationreminder.features.splash.SplashScreen
 import com.tsci.dehydrationreminder.ui.theme.DehydrationReminderTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    App()
                 }
             }
         }
@@ -30,14 +36,24 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun App() {
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = Screen.SplashScreen.route
+    ) {
+        composable(
+            route = Screen.SplashScreen.route
+        ) {
+            SplashScreen(navController)
+        }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     DehydrationReminderTheme {
-        Greeting("Android")
+        App()
     }
 }
