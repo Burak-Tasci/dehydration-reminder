@@ -6,11 +6,11 @@ import Dependencies.ComposeDestinations
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    kotlin("kapt")
     id("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
     id("com.google.devtools.ksp") version "1.7.20-1.0.7"
+    kotlin("kapt")
 }
 
 android {

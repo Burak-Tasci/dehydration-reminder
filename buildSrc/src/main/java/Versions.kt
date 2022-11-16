@@ -3,7 +3,7 @@
  */
 object Versions {
     const val hiltNavigation = "1.0.0"
-    const val compose = "1.2.0"
+    const val compose = "1.4.0-alpha01"
     const val gradlePlugin = "7.3.0"
     const val kotlin = "1.7.20"
     const val timber = "4.7.1"
