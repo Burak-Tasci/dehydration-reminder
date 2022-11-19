@@ -1,3 +1,6 @@
+import Dependencies.Lifecycle
+import Dependencies.Coroutines
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -41,6 +44,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
 
-    api(Dependencies.lifecycleViewModel)
-    api(Dependencies.coroutinesCore)
+    api(Lifecycle.viewModel)
+    api(Coroutines.core)
 }
